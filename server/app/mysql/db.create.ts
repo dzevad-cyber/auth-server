@@ -7,5 +7,6 @@ export const sequelize = new Sequelize(
   {
     host: process.env.MYSQL_HOST,
     dialect: process.env.DB_DIALECT as Dialect,
+    logging: false,
   }
 );

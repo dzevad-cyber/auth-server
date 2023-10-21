@@ -1,8 +1,9 @@
 console.time('Server startup time');
-import app from './db/app/app';
-import { dbConnect } from './db/mysql/sequelize/db.utils';
+import app from './app/app';
+import dbSetup from './app/mysql/db.setup';
+import { sequelize } from './app/mysql/db.create';
 
-dbConnect();
+dbSetup(sequelize);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
