@@ -1,14 +1,8 @@
 console.time('Server startup time');
-import express from 'express';
+import app from './db/app/app';
 import { dbConnect } from './db/mysql/sequelize/db.utils';
 
-const app = express();
-
 dbConnect();
-
-app.get('/', (req, res) => {
-  res.send('Hello World!!!');
-});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
