@@ -1,10 +1,10 @@
 console.time('Server startup time');
 import express from 'express';
-import { dbConnect, sequelize } from './db/mysql/sequelize/db.utils';
+import { dbConnect } from './db/mysql/sequelize/db.utils';
 
 const app = express();
 
-dbConnect(sequelize);
+dbConnect();
 
 app.get('/', (req, res) => {
   res.send('Hello World!!!');
